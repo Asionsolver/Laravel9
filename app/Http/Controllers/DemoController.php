@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class DemoController extends Controller
 {
     public function test(){
-        return 'test successed';
+        return 'test success';
     }
 }
