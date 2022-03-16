@@ -9,4 +9,8 @@ class DemoController extends Controller
     public function test(){
         return 'test success';
     }
+    
+
+    //generate function
+
 }
