@@ -9,9 +9,8 @@
 </head>
 
 <body>
-    {{-- <h1>Hello Contact Page {{ $name }}.<br> Your ID : {{ $id }}.</h1> --}}
-    {{-- <h1>Hello Contact Page {{ $name }}.</h1> --}}
-    <h1>Hello Contact Page.</h1>
+    <h1>Welcome to Show page</h1>
+    <h3><br>Your name is {{ $name }}.</h3>
 </body>
 
 </html>

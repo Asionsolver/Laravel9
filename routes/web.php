@@ -4,6 +4,7 @@ use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\DemoController;
 // use App\Http\Controllers\PageController;
+use App\Http\Controllers\aboutController;
 
 
 /*
@@ -89,15 +90,12 @@ Route::get('students/{name?}', function ($name = 'Enter your name') {
     return view('admin.student', ['name' => $name]);
 });
 
-// , 'id' => $id]
-// , $id = 'Enter your id'
-
-
-
-
-
-
-
 // Route::get('/','App\Http\Controllers\PageController@home');
 // Route::get('/about','App\Http\Controllers\PageController@about');
 // Route::get('/contact','App\Http\Controllers\PageController@contact');
+
+// Route::get('about/{name}', [aboutController::class, 'show']);
+// Route::get('show', [aboutController::class, 'show']);
+// Route::get('show/{name}', [aboutController::class, 'show']);
+Route::get('show', [aboutController::class, 'show']);
+Route::get('contact', [aboutController::class, 'contact']);
