@@ -28,6 +28,9 @@ Route::get('/include', function () {
 Route::get('/component', function () {
     return view('component');
 });
+Route::get('/slots', function () {
+    return view('slots');
+});
 
 // Route::get('user/{u_id}', function ($id) {
 //     return "User id is " . $id;
