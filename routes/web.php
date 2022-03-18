@@ -25,6 +25,9 @@ Route::get('/', function () {
 Route::get('/include', function () {
     return view('include', ['name' => 'Ashis']);
 });
+Route::get('/component', function () {
+    return view('component');
+});
 
 // Route::get('user/{u_id}', function ($id) {
 //     return "User id is " . $id;
@@ -103,4 +106,4 @@ Route::fallback(function () {
 // Route::get('show/{name}', [aboutController::class, 'show']);
 // Route::get('show', [aboutController::class, 'show']);
 // Route::get('contact', [aboutController::class, 'contact']);
-Route::get('contact', [DemoController::class, 'show']);
+// Route::get('contact', [DemoController::class, 'show']);
