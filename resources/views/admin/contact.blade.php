@@ -11,6 +11,11 @@
 <body>
     {{-- <h1>Hello Contact Page {{ $name }}.<br> Your ID : {{ $id }}.</h1> --}}
     {{-- <h1>Hello Contact Page {{ $name }}.</h1> --}}
+    <h1>Welcome to {{ $name }} our Contact Page.</h1>
+    <h4>Name: Ashis Kumar Pal</h4>
+    <h4>Nick Name: {{ $name }}</h4>
+    <h4>Contact Details: {{ $contact }} </h4>
+    <h4>Pincode: {{ $pincode }} </h4>
 
 </body>
 

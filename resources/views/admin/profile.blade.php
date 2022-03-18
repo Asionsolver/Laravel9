@@ -9,7 +9,11 @@
 </head>
 
 <body>
-    <h1>Welcome to Admin Profile Page.</h1>
+    <h1>Welcome to {{ $name }} our Admin Profile Page.</h1>
+    <h5>Name: Ashis Kumar Pal</h5>
+    <h5>Type: Premium</h5>
+    <h5>Quality: Elite</h5>
+    <h5>Pincode: {{ $pincode }}</h5>
 </body>
 
 </html>

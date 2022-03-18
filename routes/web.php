@@ -2,7 +2,7 @@
 
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
-// use App\Http\Controllers\DemoController;
+use App\Http\Controllers\DemoController;
 // use App\Http\Controllers\PageController;
 use App\Http\Controllers\aboutController;
 
@@ -20,6 +20,10 @@ use App\Http\Controllers\aboutController;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/include', function () {
+    return view('include', ['name' => 'Ashis']);
 });
 
 // Route::get('user/{u_id}', function ($id) {
@@ -74,21 +78,21 @@ Route::fallback(function () {
 // });
 
 
-Route::get('abouts', function () {
-    return view('admin.about');
-});
+// Route::get('abouts', function () {
+//     return view('admin.about');
+// });
 
-Route::get('users/{u_id}', function ($id) {
-    return view('admin.user', ['id' => $id]);
-});
+// Route::get('users/{u_id}', function ($id) {
+//     return view('admin.user', ['id' => $id]);
+// });
 
-Route::get('posts/{p_id}/comment/{c_id?}', function ($p_id, $c_id) {
-    return view('admin.post', ['p_id' => $p_id, 'c_id' => $c_id]);
-});
+// Route::get('posts/{p_id}/comment/{c_id?}', function ($p_id, $c_id) {
+//     return view('admin.post', ['p_id' => $p_id, 'c_id' => $c_id]);
+// });
 
-Route::get('students/{name?}', function ($name = 'Enter your name') {
-    return view('admin.student', ['name' => $name]);
-});
+// Route::get('students/{name?}', function ($name = 'Enter your name') {
+//     return view('admin.student', ['name' => $name]);
+// });
 
 // Route::get('/','App\Http\Controllers\PageController@home');
 // Route::get('/about','App\Http\Controllers\PageController@about');
@@ -97,5 +101,6 @@ Route::get('students/{name?}', function ($name = 'Enter your name') {
 // Route::get('about/{name}', [aboutController::class, 'show']);
 // Route::get('show', [aboutController::class, 'show']);
 // Route::get('show/{name}', [aboutController::class, 'show']);
-Route::get('show', [aboutController::class, 'show']);
-Route::get('contact', [aboutController::class, 'contact']);
+// Route::get('show', [aboutController::class, 'show']);
+// Route::get('contact', [aboutController::class, 'contact']);
+Route::get('contact', [DemoController::class, 'show']);
