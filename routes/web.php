@@ -31,6 +31,12 @@ Route::get('/component', function () {
 Route::get('/slots', function () {
     return view('slots');
 });
+Route::get('/home', function () {
+    return view('home');
+});
+Route::get('/homecontact', function () {
+    return view('homecontact');
+});
 
 // Route::get('user/{u_id}', function ($id) {
 //     return "User id is " . $id;
