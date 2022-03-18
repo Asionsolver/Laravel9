@@ -11,7 +11,7 @@
 <body>
     {{-- <h1>Hello Contact Page {{ $name }}.<br> Your ID : {{ $id }}.</h1> --}}
     {{-- <h1>Hello Contact Page {{ $name }}.</h1> --}}
-    <h1>Hello Contact Page.</h1>
+
 </body>
 
 </html>

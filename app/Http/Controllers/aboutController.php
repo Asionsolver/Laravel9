@@ -42,7 +42,10 @@ class aboutController extends Controller
 
     function show()
     {
-        return view('admin.about');
+        $name = 'Ashis';
+        return view('admin.about', [
+            'name' => $name
+        ]);
     }
     function contact()
     {
