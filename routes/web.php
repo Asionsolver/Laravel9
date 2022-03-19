@@ -37,6 +37,21 @@ Route::get('/home', function () {
 Route::get('/homecontact', function () {
     return view('homecontact');
 });
+Route::get('/inheritance', function () {
+    return view('templateInheritance');
+});
+Route::get('/details', function () {
+    return view('admin.inheritance');
+});
+Route::get('/named', function () {
+    return view('namedroutes');
+})->name('home');
+Route::get('/nameddetails', function () {
+    return view('admin.namedroutesdetails');
+})->name('details');
+Route::get('/arguments/{category}', function ($category) {
+    return view('admin.namedarg', ['cat' => $category]);
+})->name('arguments');
 
 // Route::get('user/{u_id}', function ($id) {
 //     return "User id is " . $id;
