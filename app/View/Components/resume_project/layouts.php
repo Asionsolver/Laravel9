@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\header;
+namespace App\View\Components\resume_project;
 
 use Illuminate\View\Component;
 
-class Header extends Component
+class layouts extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class Header extends Component
      */
     public function render()
     {
-        return view('components.header.header');
+        return view('components.resume_project.layouts');
     }
 }

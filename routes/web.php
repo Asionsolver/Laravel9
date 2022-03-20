@@ -22,36 +22,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/include', function () {
-    return view('include', ['name' => 'Ashis']);
-});
-Route::get('/component', function () {
-    return view('component');
-});
-Route::get('/slots', function () {
-    return view('slots');
-});
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/homecontact', function () {
-    return view('homecontact');
-});
-Route::get('/inheritance', function () {
-    return view('templateInheritance');
-});
-Route::get('/details', function () {
-    return view('admin.inheritance');
-});
-Route::get('/named', function () {
-    return view('namedroutes');
-})->name('home');
-Route::get('/nameddetails', function () {
-    return view('admin.namedroutesdetails');
-})->name('details');
-Route::get('/arguments/{category}', function ($category) {
-    return view('admin.namedarg', ['cat' => $category]);
-})->name('arguments');
+// Route::get('/include', function () {
+//     return view('include', ['name' => 'Ashis']);
+// });
+// Route::get('/component', function () {
+//     return view('component');
+// });
+// Route::get('/slots', function () {
+//     return view('slots');
+// });
+// Route::get('/home', function () {
+//     return view('home');
+// });
+// Route::get('/homecontact', function () {
+//     return view('homecontact');
+// });
+// Route::get('/inheritance', function () {
+//     return view('templateInheritance');
+// });
+// Route::get('/details', function () {
+//     return view('admin.inheritance');
+// });
+// Route::get('/named', function () {
+//     return view('namedroutes');
+// })->name('home');
+// Route::get('/nameddetails', function () {
+//     return view('admin.namedroutesdetails');
+// })->name('details');
+// Route::get('/arguments/{category}', function ($category) {
+//     return view('admin.namedarg', ['cat' => $category]);
+// })->name('arguments');
 
 // Route::get('user/{u_id}', function ($id) {
 //     return "User id is " . $id;
@@ -80,6 +80,16 @@ Route::get('/arguments/{category}', function ($category) {
 // Route::get('user/{name}/{u_id}', function ($name, $id) {
 //     return "User name is " . $name . " and id is " . $id;
 // })->whereNumber('id')->whereAlpha('name');
+
+// Resume Laravel Project
+
+Route::get('/home', function () {
+    return view('resumeProject.home');
+});
+
+// Route::get('/home', function () {
+//     return view('resumeProject.home');
+// });
 
 // Route::redirect('enter', 'go');
 // Route::redirect('enter', 'go', 301);
