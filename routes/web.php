@@ -83,9 +83,21 @@ Route::get('/', function () {
 
 // Resume Laravel Project
 
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ContactController;
+
 Route::get('/home', function () {
     return view('resumeProject.home');
-});
+})->name('home');
+Route::get('/skill', function () {
+    return view('resumeProject.skill');
+})->name('skill');
+Route::get('/news', function () {
+    return view('resumeProject.news');
+})->name('news');
+
+Route::get('services', [ServiceController::class, 'show'])->name('services');
+Route::get('contact', [ContactController::class, 'show'])->name('contact');
 
 // Route::get('/home', function () {
 //     return view('resumeProject.home');
@@ -141,3 +153,6 @@ Route::fallback(function () {
 // Route::get('show', [aboutController::class, 'show']);
 // Route::get('contact', [aboutController::class, 'contact']);
 // Route::get('contact', [DemoController::class, 'show']);
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
