@@ -86,6 +86,7 @@ Route::get('/', function () {
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 
+
 Route::get('/home', function () {
     return view('resumeProject.home');
 })->name('home');
@@ -156,3 +157,34 @@ Route::fallback(function () {
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Middleware in Laravel
+// use App\Http\Controllers\reportController;
+use App\Http\Controllers\MiddlewareController;
+
+Route::get('middleware', function () {
+    return view('middleware');
+}); //->middleware('construction');
+Route::get('dashboard', function () {
+    return view('dashboard');
+});
+Route::get('stock', function () {
+    return view('stock');
+}); //->middleware('construction');
+
+// Route::get('report', [reportController::class, 'show']);
+Route::get('report', [MiddlewareController::class, 'show']); //->middleware('construction')
+
+// using grouping middleware with group routes
+
+Route::middleware(['construction'])->group(function () {
+    Route::get('dashboard', function () {
+        return view('dashboard');
+    });
+
+    Route::get('middleware', function () {
+        return view('middleware');
+    });
+
+    Route::get('report', [MiddlewareController::class, 'show']);
+});
