@@ -188,3 +188,12 @@ Route::middleware(['construction'])->group(function () {
 
     Route::get('report', [MiddlewareController::class, 'show']);
 });
+
+// Laravel Form
+use App\Http\Controllers\RegistrationController;
+
+Route::get('registration', [RegistrationController::class, 'showForm']);
+Route::post('registration', [RegistrationController::class, 'signup']);
+
+// Route::view('olddata', 'olddata')->name('old');
+Route::view('olddata', 'olddata')->name('old');
