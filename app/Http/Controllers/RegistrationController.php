@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Symfony\Component\Console\Input\Input;
 
+use App\Rules\Uppercase;
+
 class RegistrationController extends Controller
 {
     function showForm()
@@ -103,9 +105,14 @@ class RegistrationController extends Controller
         // Multiple Rule Specified using Single | delimited String
 
         $validate = $request->validate([
-            'name' => 'required | min:5',
+            'name' => ['required', 'min:5', new Uppercase],
             'email' => 'required',
-            'password' => 'required | min:8',
+            //Custom Validation Rule using Closures
+            'password' => ['required', 'min:8', function ($attribute, $value, $fail) {
+                if ($value === '12345678') {
+                    $fail('The ' . $attribute . ' is invalid. Please chose another ' . $attribute . ' combination.');
+                }
+            }],
         ]);
 
         // Multiple Rule
