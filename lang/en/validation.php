@@ -142,9 +142,12 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
-        ],
+        // 'name' => [
+        //     'required' => 'এই তথ্য তোমাকে দিতেই হবে।',
+        // ],
+        // 'password' => [
+        //     'required' => 'এই তথ্য তোমাকে দিতেই হবে।',
+        // ],
     ],
 
     /*
