@@ -17,6 +17,9 @@
         <input type="submit" value="Submit">
     </form> --}}
 
+    @if ($errors->any())
+        {{ $errors }}
+    @endif
     <form action="" method="post">
         @csrf
         Name: <input type="text" name="name" id="name" value="{{ old('name') }}"><br>
@@ -24,6 +27,13 @@
         Password: <input type="password" name="password" id="password" value="{{ old('password') }}"><br>
         <input type="submit" value="Submit">
     </form>
+
+    @if (isset($data))
+        @foreach ($data as $item)
+            {{ $item }}
+        @endforeach
+
+    @endif
 </body>
 
 </html>

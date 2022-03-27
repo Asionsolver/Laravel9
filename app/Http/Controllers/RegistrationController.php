@@ -43,6 +43,8 @@ class RegistrationController extends Controller
         //     print_r($request->input('name'));
         //     print_r($request->input('email'));
         // }
+
+
         //  filled method
         // if ($request->filled('name')) {
         //     print_r($request->input('name'));
@@ -82,10 +84,42 @@ class RegistrationController extends Controller
         // return redirect('olddata')->withInput();
         // return redirect()->route('old')->withInput();
 
-        return redirect('olddata')->withInput(
-            $request->except('name')
-        );
+        // return redirect('olddata')->withInput(
+        //     $request->except('name')
+        // );
 
-        return view('registration');
+
+
+        // Form Validation using validate method in Laravel
+
+        // Single Rule
+
+        // $validate = $request->validate([
+        //     'name' => 'required',
+        //     'email' => 'required',
+        //     'password' => 'required',
+        // ]);
+
+        // Multiple Rule Specified using Single | delimited String
+
+        $validate = $request->validate([
+            'name' => 'required | min:5',
+            'email' => 'required',
+            'password' => 'required | min:8',
+        ]);
+
+        // Multiple Rule
+
+        // $validate = $request->validate([
+        //     'name' => ['required', 'min:5'],
+        //     'email' => ['required'],
+        //     'password' => ['required', 'min:8'],
+        // ]);
+
+        print_r('Form are Validated');
+
+        $input = $request->except('_token');
+
+        return view('registration', ['data' => $input]);
     }
 }
