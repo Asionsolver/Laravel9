@@ -196,4 +196,9 @@ Route::get('registration', [RegistrationController::class, 'showForm']);
 Route::post('registration', [RegistrationController::class, 'signup']);
 
 // Route::view('olddata', 'olddata')->name('old');
-Route::view('olddata', 'olddata')->name('old');
+// Route::view('olddata', 'olddata')->name('old');
+
+use App\Http\Controllers\StudentController;
+
+// Route::get('student', [App\Http\Controllers\StudentController::class, 'showData']);
+Route::get('student', [StudentController::class, 'test']);
