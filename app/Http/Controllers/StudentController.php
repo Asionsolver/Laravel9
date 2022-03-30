@@ -36,7 +36,7 @@ class StudentController extends Controller
         DB::transaction(function () {
             DB::update('update student set name = ? where id=?', ['John', 4]);
             DB::delete('delete from student where id = :id', ['id' => 3]);
-            DB::insert('insert into student ( name,email,city) values (?, ?, ?)', ['Rasel', 'rasel274@gmail.com', 'Dhaka']);
+            // DB::insert('insert into student ( name,email,city) values (?, ?, ?)', ['Rasel', 'rasel274@gmail.com', 'Dhaka']);
             DB::delete('delete from student where id = :id', ['id' => 27]);
         });
 
