@@ -202,3 +202,7 @@ use App\Http\Controllers\StudentController;
 
 // Route::get('student', [App\Http\Controllers\StudentController::class, 'showData']);
 Route::get('student', [StudentController::class, 'test']);
+
+use App\Http\Controllers\StudentDetailsController;
+
+Route::get('studentdetails', [StudentDetailsController::class, 'show']);

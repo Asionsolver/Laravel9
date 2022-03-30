@@ -30,7 +30,7 @@ class StudentController extends Controller
         // DB::delete('delete from student where id = :id', ['id' => 7]); //delete method
 
         //not recommended
-        // DB::unprepared('delete from student where id = 5'); //unprepared method
+        // DB::unprepared('delete from student where id = 5'); //unprepared method 
 
         //transaction method
         DB::transaction(function () {
