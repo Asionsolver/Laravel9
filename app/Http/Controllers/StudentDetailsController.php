@@ -72,9 +72,49 @@ class StudentDetailsController extends Controller
         // $students = DB::table('student')->orWhereBetween('marks', [80, 89])->orWhereBetween('marks', [90, 100])->get();
 
         //whereNotBetween Method
-        $students = DB::table('student')->whereNotBetween('marks', [80, 90])->get();
+        // $students = DB::table('student')->whereNotBetween('marks', [80, 90])->get();
 
-        // dd($students);
+
+        //whereDate Method
+        // $students = DB::table('student')->whereDate('date', '2022-03-08')->get();
+
+        //whereMonth Method
+        // $students = DB::table('student')->whereMonth('date', '03')->get();
+
+        //whereYear Method
+        // $students = DB::table('student')->whereYear('date', '2022')->get();
+
+        //whereDay Method
+        // $students = DB::table('student')->whereDay('date', '08')->get();
+
+        //latest Method
+        // $students = DB::table('student')->latest('date')->get();
+        // $students = DB::table('student')->latest('date')->first();
+
+        //oldest Method
+        // $students = DB::table('student')->oldest(date)->get();
+        // $students = DB::table('student')->oldest('date')->first();
+
+        //orderBy Method
+        // $students = DB::table('student')->orderBy('marks', 'desc')->get();
+        // $students = DB::table('student')->orderBy('marks', 'asc')->get();
+
+        //random Method
+        // $students = DB::table('student')->inRandomOrder()->get();
+        // $students = DB::table('student')->inRandomOrder()->first();
+
+        //groupBy Method
+        // $students = DB::table('student')->groupBy('city')->get();
+
+        //having Method
+        // $students = DB::table('student')->having('marks', '>', 80)->get();
+
+        //groupByHaving Method
+        // $students = DB::table('student')->groupBy('marks')->having('marks', '>', 80)->get();
+
+
+
+        dd($students);
 
         return view('studentsdetails', ['students' => $students]);
     }
