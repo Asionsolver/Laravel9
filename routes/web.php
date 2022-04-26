@@ -22,6 +22,57 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route returns a string
+Route::get('/about', function () {
+    return 'This is about page';
+});
+
+// Route returns a parameter
+Route::get('/about/{id}', function ($id) {
+    return 'This is about page with id: ' . $id;
+});
+
+// Route returns a multiple parameters
+Route::get('/about/{id}/{name}', function ($id, $name) {
+    return 'This is about page with id: ' . $id . ' and name: ' . $name;
+});
+
+//multiple routes multiple parameters
+Route::get('/about/{id}/user/{name}/{age}', function ($id, $name, $age) {
+    return 'This is about page with id: ' . $id . ' and name: ' . $name . ' and age: ' . $age;
+});
+
+// Route returns optional parameters
+Route::get('/optional/user/{id?}', function ($id = 'Enter your id') {
+    return 'This is about page with id: ' . $id;
+});
+
+//Route with regular expression
+Route::get('/regular/{id}/user/{name}/{age}', function ($id, $name, $age) {
+    return 'This is about page with id: ' . $id . ' and name: ' . $name . ' and age: ' . $age;
+})->where(['id' => '[0-9]+', 'name' => '[A-Za-z]+', 'age' => '[0-9]+']);
+
+// Route with helper method
+Route::get('/helper/{id}/user/{name}/{age}', function ($id, $name, $age) {
+    return 'This is about page with id: ' . $id . ' and name: ' . $name . ' and age: ' . $age;
+})->whereAlpha('name')->whereNumber('age')->whereNumber('id');
+
+// Route with redirect
+Route::get('/redirect', function () {
+    return redirect('/about');
+});
+
+// Route with permanent redirect
+Route::get('/permanent', function () {
+    return redirect('/about', 301);
+});
+
+
+
+Route::get('/custom', function () {
+    return view('custom');
+});
+
 // Route::get('/include', function () {
 //     return view('include', ['name' => 'Ashis']);
 // });
@@ -87,18 +138,18 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ContactController;
 
 
-Route::get('/home', function () {
-    return view('resumeProject.home');
-})->name('home');
-Route::get('/skill', function () {
-    return view('resumeProject.skill');
-})->name('skill');
-Route::get('/news', function () {
-    return view('resumeProject.news');
-})->name('news');
+// Route::get('/home', function () {
+//     return view('resumeProject.home');
+// })->name('home');
+// Route::get('/skill', function () {
+//     return view('resumeProject.skill');
+// })->name('skill');
+// Route::get('/news', function () {
+//     return view('resumeProject.news');
+// })->name('news');
 
-Route::get('services', [ServiceController::class, 'show'])->name('services');
-Route::get('contact', [ContactController::class, 'show'])->name('contact');
+// Route::get('services', [ServiceController::class, 'show'])->name('services');
+// Route::get('contact', [ContactController::class, 'show'])->name('contact');
 
 // Route::get('/home', function () {
 //     return view('resumeProject.home');
@@ -162,38 +213,38 @@ Route::fallback(function () {
 // use App\Http\Controllers\reportController;
 use App\Http\Controllers\MiddlewareController;
 
-Route::get('middleware', function () {
-    return view('middleware');
-}); //->middleware('construction');
-Route::get('dashboard', function () {
-    return view('dashboard');
-});
-Route::get('stock', function () {
-    return view('stock');
-}); //->middleware('construction');
+// Route::get('middleware', function () {
+//     return view('middleware');
+// }); //->middleware('construction');
+// Route::get('dashboard', function () {
+//     return view('dashboard');
+// });
+// Route::get('stock', function () {
+//     return view('stock');
+// }); //->middleware('construction');
 
 // Route::get('report', [reportController::class, 'show']);
-Route::get('report', [MiddlewareController::class, 'show']); //->middleware('construction')
+// Route::get('report', [MiddlewareController::class, 'show']); //->middleware('construction')
 
 // using grouping middleware with group routes
 
-Route::middleware(['construction'])->group(function () {
-    Route::get('dashboard', function () {
-        return view('dashboard');
-    });
+// Route::middleware(['construction'])->group(function () {
+//     Route::get('dashboard', function () {
+//         return view('dashboard');
+//     });
 
-    Route::get('middleware', function () {
-        return view('middleware');
-    });
+//     Route::get('middleware', function () {
+//         return view('middleware');
+//     });
 
-    Route::get('report', [MiddlewareController::class, 'show']);
-});
+//     Route::get('report', [MiddlewareController::class, 'show']);
+// });
 
 // Laravel Form
 use App\Http\Controllers\RegistrationController;
 
-Route::get('registration', [RegistrationController::class, 'showForm']);
-Route::post('registration', [RegistrationController::class, 'signup']);
+// Route::get('registration', [RegistrationController::class, 'showForm']);
+// Route::post('registration', [RegistrationController::class, 'signup']);
 
 // Route::view('olddata', 'olddata')->name('old');
 // Route::view('olddata', 'olddata')->name('old');
@@ -201,8 +252,8 @@ Route::post('registration', [RegistrationController::class, 'signup']);
 use App\Http\Controllers\StudentController;
 
 // Route::get('student', [App\Http\Controllers\StudentController::class, 'showData']);
-Route::get('student', [StudentController::class, 'test']);
+// Route::get('student', [StudentController::class, 'test']);
 
 use App\Http\Controllers\StudentDetailsController;
 
-Route::get('studentdetails', [StudentDetailsController::class, 'show']);
+// Route::get('studentdetails', [StudentDetailsController::class, 'show']);
