@@ -57,6 +57,10 @@ Route::get('/helper/{id}/user/{name}/{age}', function ($id, $name, $age) {
     return 'This is about page with id: ' . $id . ' and name: ' . $name . ' and age: ' . $age;
 })->whereAlpha('name')->whereNumber('age')->whereNumber('id');
 
+Route::get('/category/{category}', function ($category) {
+    return 'This is about page with category: ' . $category;
+})->whereIn('category', ['movie', 'song', 'painting']);
+
 // Route with redirect
 Route::get('/redirect', function () {
     return redirect('/about');
