@@ -62,10 +62,10 @@ Route::get('/redirect', function () {
     return redirect('/about');
 });
 
-// Route with permanent redirect
-Route::get('/permanent', function () {
-    return redirect('/about', 301);
-});
+// Route::redirect('enter', 'go');
+// Route::redirect('enter', 'go', 301);
+// Route::permanentRedirect('enter', 'go');
+
 
 
 
@@ -100,6 +100,7 @@ Route::get('/custom', function () {
 // Route::get('/nameddetails', function () {
 //     return view('admin.namedroutesdetails');
 // })->name('details');
+
 // Route::get('/arguments/{category}', function ($category) {
 //     return view('admin.namedarg', ['cat' => $category]);
 // })->name('arguments');
@@ -155,9 +156,7 @@ use App\Http\Controllers\ContactController;
 //     return view('resumeProject.home');
 // });
 
-// Route::redirect('enter', 'go');
-// Route::redirect('enter', 'go', 301);
-// Route::permanentRedirect('enter', 'go');
+
 
 Route::fallback(function () {
     return "You can enter not right route";
