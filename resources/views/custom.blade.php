@@ -11,7 +11,8 @@
 <body>
     <h1>Add Custom CSS, JAVASCRIPY and BOOTSTRAP File.</h1>
     <hr>
-    <x-card />
+
+    <h2>My name is {{ $name }}</h2>
 </body>
 
 </html>

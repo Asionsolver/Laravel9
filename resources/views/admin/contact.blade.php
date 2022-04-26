@@ -14,6 +14,7 @@
     <h1>Welcome to {{ $name }} our Contact Page.</h1>
     <h4>Name: Ashis Kumar Pal</h4>
     <h4>Nick Name: {{ $name }}</h4>
+    <h4>Id: {{ $id }}</h4>
     <h4>Contact Details: {{ $contact }} </h4>
     <h4>Pincode: {{ $pincode }} </h4>
 
