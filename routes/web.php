@@ -22,7 +22,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/custom', function () {
+    return view('custom');
+});
 
 
 // Fallback Route
