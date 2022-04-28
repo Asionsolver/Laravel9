@@ -23,12 +23,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/include', function () {
-    return view('exercise.include', ['name' => 'Nguyen']);
+Route::get('/home', function () {
+    return view('exercise.componentLayout.home');
 });
-
-
-Route::get('/product', [product::class, 'show']);
+Route::get('/contact', function () {
+    return view('exercise.componentLayout.contact');
+});
 
 // Fallback Route
 Route::fallback(function () {
