@@ -24,10 +24,10 @@ Route::get('/', function () {
 });
 
 Route::get('/home', function () {
-    return view('exercise.componentLayout.home');
+    return view('exercise.InheritanceLayout.home');
 });
 Route::get('/contact', function () {
-    return view('exercise.componentLayout.contact');
+    return view('exercise.InheritanceLayout.contact');
 });
 
 // Fallback Route
