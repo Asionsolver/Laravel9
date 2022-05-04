@@ -7,6 +7,7 @@ use App\Http\Controllers\DemoController;
 use App\Http\Controllers\aboutController;
 
 use App\Http\Controllers\product;
+use App\Http\Controllers\QueryBuilder;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,12 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('exercise.InheritanceLayout.home');
-});
-Route::get('/contact', function () {
-    return view('exercise.InheritanceLayout.contact');
-});
+Route::get('/QueryBuilder', [QueryBuilder::class, 'show']);
 
 // Fallback Route
 Route::fallback(function () {
