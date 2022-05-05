@@ -67,10 +67,21 @@ class QueryBuilder extends Controller
         // $users = DB::table('student')->distinct()->get();
 
         // Where method
-        $users = DB::table('student')->where('id', '=', '201311049')->get();
-        $users = DB::table('student')->where('id', '<', '201311049')->get();
-        $users = DB::table('student')->where('id', '>', '201311049')->get();
-        $users = DB::table('student')->where('id', '201311049')->get(); // by default equal
+        // $users = DB::table('student')->where('id', '=', '201311049')->get();
+        // $users = DB::table('student')->where('id', '<', '201311049')->get();
+        // $users = DB::table('student')->where('id', '>', '201311049')->get();
+        // $users = DB::table('student')->where('name', 'like', 's%')->get();
+        // $users = DB::table('student')->where('id', '201311049')->get(); // by default equal
+
+        // Or Where Method
+        // $users = DB::table('student')->where('id', '=', '201311057')->orWhere('name', '=', 'Asion')->get();
+
+        //Where Between Method
+
+        // $users = DB::table('student')->whereBetween('Merit', [1, 5])->get();
+        // $users = DB::table('student')->whereBetween('Merit', [1, 5])->orWhereBetween('id', [201311041, 201311049])->get();
+
+
 
         dd($users);
         return view('QueryBuilder', ['users' => $users]);
