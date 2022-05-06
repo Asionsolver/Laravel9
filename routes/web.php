@@ -8,11 +8,16 @@ use App\Http\Controllers\aboutController;
 
 use App\Http\Controllers\product;
 use App\Http\Controllers\QueryBuilder;
+use App\Http\Controllers\Pagination;
+
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
+|
+
+
+--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
@@ -24,7 +29,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/QueryBuilder', [QueryBuilder::class, 'show']);
+//Create a route for controller
+Route::get(('/pagination'), [Pagination::class, 'show']);
+
+
 
 // Fallback Route
 Route::fallback(function () {
