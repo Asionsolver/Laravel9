@@ -29,8 +29,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Create a route for controller
-Route::get(('/pagination'), [Pagination::class, 'show']);
+
 
 
 
