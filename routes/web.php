@@ -9,7 +9,8 @@ use App\Http\Controllers\aboutController;
 use App\Http\Controllers\product;
 use App\Http\Controllers\QueryBuilder;
 use App\Http\Controllers\Pagination;
-
+use App\Http\Controllers\Services;
+use App\Http\Controllers\Contact;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,19 @@ use App\Http\Controllers\Pagination;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('home', function () {
+    return view('SimpleProject.home');
+})->name('home');
+Route::get('skill', function () {
+    return view('SimpleProject.skill');
+})->name('skill');
+
+Route::get('services', [Services::class, 'services'])->name('services');
+
+Route::get('contact', [Contact::class, 'contact'])->name('contact');
+
+
 
 
 

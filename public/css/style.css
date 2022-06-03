@@ -1,10 +1,19 @@
-.font-family {
+.st-font {
     font-family: 'Satisfy', cursive;
 }
 
-body {
+body,
+html {
     height: 100%;
-    font-family: 'Quicksand';
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-fluid {
+    min-height: 100%;
+}
+
+.ss-color {
+    color: #ffe9f9;
 }
 
 a.nav-link {
@@ -14,12 +23,14 @@ a.nav-link {
 a.nav-link:hover {
     color: black;
     background-color: #e9cd79;
+    border-radius: 10px;
 }
 
 a.nav-link.active {
     color: black;
     background-color: #ffc107;
     font-weight: bold;
+    border-radius: 10px;
 }
 
 .img-thumbnail {
@@ -31,6 +42,55 @@ a.nav-link.active {
     line-height: 2rem;
 }
 
-p {
+.indent {
     text-indent: 100px;
+}
+
+.i-color {
+    color: #89f025;
+}
+
+.contact-name-color {
+    color: #de0e56;
+    font-weight: bold;
+}
+
+.progress-bar-design-hcs {
+    width: 100%;
+}
+
+.progress-bar-design-js {
+    width: 95%;
+}
+
+.progress-bar-design-c {
+    width: 90%;
+}
+
+.progress-bar-design-node {
+    width: 85%;
+}
+
+.progress-bar-design-java {
+    width: 70%;
+}
+
+.progress-bar-design-react {
+    width: 45%;
+}
+
+.progress-bar-design-sql {
+    width: 70%;
+}
+
+.progress-bar-design-md {
+    width: 50%;
+}
+
+.progress-bar-design-java {
+    width: 90%;
+}
+
+.progress-bar-design-java {
+    width: 90%;
 }

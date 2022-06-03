@@ -1,0 +1,2 @@
+😊 What is session?
+=> Used to manage information across difference pages.
